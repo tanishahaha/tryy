@@ -72,10 +72,6 @@ const Index = () => {
           />
         </Button>
 
-        {/* Final Surprise */}
-        <section className="px-4 sm:px-6 md:px-8 mb-12">
-          <FinalSurprise />
-        </section>
 
         {/* Countdown Timer */}
         <section className="px-4 sm:px-6 md:px-8 mb-12">
@@ -85,6 +81,10 @@ const Index = () => {
         {/* Photo Carousel */}
         <section className="px-4 sm:px-6 md:px-8 mb-12">
           <PhotoCarousel />
+        </section>
+        {/* Final Surprise */}
+        <section className="px-4 sm:px-6 md:px-8 mb-12">
+          <FinalSurprise />
         </section>
       </div>
     </div>
