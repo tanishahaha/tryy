@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Soft Comforting Theme */
+    --background: 240 20% 97%;
+    --foreground: 240 15% 25%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 15% 25%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 15% 25%;
+
+    --primary: 260 60% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 40% 75%;
+    --secondary-foreground: 240 15% 25%;
+
+    --muted: 240 15% 94%;
+    --muted-foreground: 240 10% 45%;
+
+    --accent: 280 50% 80%;
+    --accent-foreground: 240 15% 25%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 15% 88%;
+    --input: 240 15% 88%;
+    --ring: 260 60% 65%;
+
+    --radius: 0.75rem;
+
+    /* Custom comforting colors */
+    --soft-purple: 260 60% 65%;
+    --light-blue: 220 40% 75%;
+    --gentle-lavender: 280 50% 80%;
+    --warm-cream: 40 30% 96%;
+    --soft-indigo: 250 45% 70%;
+    
+    /* Gradients */
+    --gradient-romantic: linear-gradient(135deg, hsl(260 60% 65%) 0%, hsl(220 40% 75%) 100%);
+    --gradient-dreamy: linear-gradient(180deg, hsl(240 20% 97%) 0%, hsl(250 25% 95%) 100%);
+    --gradient-shimmer: linear-gradient(45deg, hsl(260 60% 65%) 0%, hsl(240 50% 70%) 50%, hsl(220 40% 75%) 100%);
+    
+    /* Effects */
+    --glow-pink: 0 8px 32px hsla(260, 60%, 65%, 0.3);
+    --glow-lavender: 0 8px 32px hsla(220, 40%, 75%, 0.3);
+    --shadow-soft: 0 4px 20px hsla(240, 40%, 50%, 0.12);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background: var(--gradient-dreamy);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: var(--gradient-romantic);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glow-pink {
+    box-shadow: var(--glow-pink);
+  }
+
+  .glow-lavender {
+    box-shadow: var(--glow-lavender);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-heart-beat {
+    animation: heartbeat 1.5s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 3s linear infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes heartbeat {
+    0%, 100% {
+      transform: scale(1);
+    }
+    25% {
+      transform: scale(1.1);
+    }
+    50% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% center;
+    }
+    100% {
+      background-position: 200% center;
+    }
+  }
+}
